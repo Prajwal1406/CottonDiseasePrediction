@@ -5,13 +5,11 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.inception_v3 import preprocess_input
 import numpy as np
 
-# Load the trained model
 model = load_model('InceptionV3.h5')
 
-# Define the class labels
-class_labels = ['Class 0', 'Class 1', 'Class 2', 'Class 3', 'Class 4']
 
-# Function to preprocess the image
+class_labels = ['Diseased Cotton Leaf', 'Diseased Cotton Plant', 'Fresh Cotton Leaf', 'Fresh Cotton Plant']
+
 IMAGE_SIZE = (224, 224)
 
 def load_and_preprocess_image(image_path):
@@ -46,7 +44,7 @@ def display_prediction(predicted_value, image):
 
 
 def disease_app():
-    st.title('Agricultural Disease Detector 🦠')
+    st.title('Cotton Disease Detector 🦠')
     uploaded_file = st.file_uploader("Upload an Image for Disease Analysis", type="jpg")
     if uploaded_file is None:
         uploaded_file =  st.camera_input("Capture a photo")
