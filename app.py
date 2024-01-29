@@ -55,3 +55,6 @@ def disease_app():
         with open(img_path, "wb") as f:
             f.write(uploaded_file.read())
         disease_predict(img_path)
+
+if __name__ == "__main__":
+    disease_predict(imag_path)
