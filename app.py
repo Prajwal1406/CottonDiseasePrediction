@@ -57,4 +57,5 @@ def disease_app():
         disease_predict(img_path)
 
 if __name__ == "__main__":
-    disease_predict()
+     img_path = f"uploaded_image.jpg"
+    disease_predict(img_path)
